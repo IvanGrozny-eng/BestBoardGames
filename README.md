@@ -1,5 +1,7 @@
 # BestBoardGames
 Dark-mode board game catalog template (Vanilla JS) FOR SALE!!!!
+
+
 This is a clean, dark-mode focused landing page / catalog template for board games. It’s built on vanilla tech (no frameworks, no bloat), so it loads fast and is super easy to customize.
 
 What’s in here?
