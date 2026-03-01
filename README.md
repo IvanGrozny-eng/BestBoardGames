@@ -1,7 +1,7 @@
 # BestBoardGames
 Dark-mode board game catalog template (Vanilla JS) 
 
-FOR SALE(Price fir code: 20-30$)
+FOR SALE(Price for code: 20-30$)
 
 
 This is a clean, dark-mode focused landing page / catalog template for board games. It’s built on vanilla tech (no frameworks, no bloat), so it loads fast and is super easy to customize.
@@ -27,3 +27,5 @@ Example structure inside index.html
     type: "strategy",
     // ...etc
 }
+
+To buy write: lazern04@gmail.com
