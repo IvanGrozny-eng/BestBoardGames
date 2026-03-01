@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BestBoardGamesHub | Find Your Perfect Game 2026</title>
+    <meta name="description" content="Top board game reviews 2025-2026. Ratings, player filters, and honest expert insights.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #0f0f0f;
+            --bg-card: #1a1a1a;
+            --accent-purple: #a855f7;
+            --accent-orange: #f97316;
+            --text-main: #e5e7eb;
+            --text-muted: #9ca3af;
+            --neon-glow: 0 0 15px rgba(168, 85, 247, 0.4);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        button { cursor: pointer; border: none; outline: none; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(15, 15, 15, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 75px;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.6rem;
+            background: linear-gradient(90deg, var(--accent-purple), var(--accent-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-link { font-weight: 500; font-size: 0.95rem; color: var(--text-muted); transition: var(--transition); }
+        .nav-link:hover { color: var(--accent-purple); text-shadow: var(--neon-glow); }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .search-container {
+            position: relative;
+            background: #262626;
+            padding: 6px 15px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            border: 1px solid transparent;
+            transition: var(--transition);
+        }
+
+        .search-container:focus-within { border-color: var(--accent-purple); }
+
+        .search-container input {
+            background: transparent;
+            border: none;
+            color: white;
+            padding-left: 10px;
+            width: 180px;
+            font-size: 0.9rem;
+        }
+
+        .icon-btn {
+            background: transparent;
+            color: white;
+            font-size: 1.2rem;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .icon-btn:hover { color: var(--accent-orange); }
+
+        .cart-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--accent-orange);
+            font-size: 0.65rem;
+            padding: 2px 6px;
+            border-radius: 50%;
+            font-weight: 800;
+        }
+
+        .hero {
+            height: 85vh;
+            background: linear-gradient(rgba(15,15,15,0.75), rgba(15,15,15,0.95)), 
+                        url('https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?auto=format&fit=crop&q=80&w=1600') no-repeat center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding-top: 75px;
+        }
+
+        .hero-content { width: 100%; }
+        .hero h1 { font-size: 4.5rem; font-weight: 800; margin-bottom: 25px; line-height: 1.1; }
+        .hero p { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 40px; max-width: 650px; margin-inline: auto; }
+        
+        .btn {
+            padding: 14px 35px;
+            border-radius: 10px;
+            font-weight: 700;
+            transition: var(--transition);
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+        }
+
+        .btn-primary { background: var(--accent-purple); color: white; box-shadow: var(--neon-glow); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 0 25px rgba(168, 85, 247, 0.6); }
+        .btn-outline { border: 2px solid var(--text-muted); color: white; margin-left: 15px; }
+        .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: white; }
+
+        .section-title { font-size: 2.2rem; margin-bottom: 40px; position: relative; font-weight: 800; }
+        .section-title span { color: var(--accent-purple); }
+
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 100px;
+            padding: 20px 0;
+        }
+        
+        .carousel-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            gap: 25px;
+        }
+
+        .featured-card {
+            min-width: 320px;
+            height: 450px;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .featured-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .featured-card:hover img { transform: scale(1.05); }
+
+        .featured-overlay {
+            position: absolute; bottom: 0; left: 0; right: 0;
+            padding: 30px; background: linear-gradient(transparent, rgba(0,0,0,0.95));
+        }
+
+        .filters-bar {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 45px;
+            overflow-x: auto;
+            padding-bottom: 15px;
+        }
+
+        .filter-chip {
+            padding: 10px 24px;
+            background: #1e1e1e;
+            border-radius: 30px;
+            white-space: nowrap;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 1px solid rgba(255,255,255,0.05);
+            color: var(--text-muted);
+        }
+
+        .filter-chip:hover { color: white; border-color: var(--accent-purple); }
+        .filter-chip.active { background: var(--accent-purple); color: white; box-shadow: var(--neon-glow); border-color: transparent; }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 35px;
+            margin-bottom: 100px;
+        }
+
+        .game-card {
+            background: var(--bg-card);
+            border-radius: 18px;
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid rgba(255,255,255,0.03);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-card:hover { transform: translateY(-12px); border-color: var(--accent-purple); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+
+        .game-img { width: 100%; height: 220px; object-fit: cover; }
+        
+        .game-info { padding: 25px; flex-grow: 1; }
+        .game-meta { display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--accent-orange); margin-bottom: 15px; font-weight: 700; }
+        .game-title { font-size: 1.3rem; font-weight: 800; margin-bottom: 12px; color: #fff; }
+        .game-desc { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 20px; line-height: 1.5; }
+
+        .game-footer {
+            padding: 20px 25px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .rating { color: #facc15; font-size: 0.95rem; font-weight: 700; }
+        .fav-btn { color: #4b5563; font-size: 1.3rem; transition: 0.2s; background: transparent; }
+        .fav-btn.active { color: #ef4444; }
+        .price-label { font-size: 1.2rem; font-weight: 800; color: #fff; }
+
+        .modal {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.92);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            backdrop-filter: blur(8px);
+        }
+
+        .modal-content {
+            background: #111;
+            width: 95%;
+            max-width: 1000px;
+            max-height: 90vh;
+            border-radius: 24px;
+            position: relative;
+            padding: 50px;
+            overflow-y: auto;
+            border: 1px solid rgba(168, 85, 247, 0.2);
+        }
+
+        .close-modal {
+            position: absolute; top: 25px; right: 25px;
+            font-size: 1.8rem; color: var(--text-muted); transition: 0.2s;
+        }
+        .close-modal:hover { color: white; }
+
+        .modal-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; }
+        .modal-img { width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+
+        .modal-badge { display: inline-block; padding: 4px 12px; background: rgba(168, 85, 247, 0.1); border: 1px solid var(--accent-purple); color: var(--accent-purple); border-radius: 6px; font-size: 0.75rem; font-weight: 700; margin-bottom: 15px; }
+
+        .chart-sim {
+            width: 100%; height: 100px;
+            background: #1a1a1a;
+            border-radius: 10px;
+            margin-top: 15px;
+            position: relative;
+            border: 1px solid #333;
+        }
+        .chart-line {
+            position: absolute; bottom: 20px; left: 0; right: 0;
+            height: 2px; background: var(--accent-orange);
+            transform: skewY(-5deg);
+        }
+
+        .spotlight-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 15px;
+        }
+        .spotlight-item {
+            background: #1a1a1a; padding: 10px; border-radius: 8px; text-align: center; font-size: 0.8rem;
+        }
+
+        footer {
+            background: #050505;
+            padding: 80px 0 30px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .footer-logo { font-size: 1.8rem; margin-bottom: 25px; }
+        .footer-link-list li { margin-bottom: 12px; color: var(--text-muted); transition: 0.2s; font-size: 0.9rem; }
+        .footer-link-list li:hover { color: var(--accent-orange); transform: translateX(5px); }
+
+        .footer-disclaimer { font-size: 0.75rem; color: #374151; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; }
+
+        .fade-in { opacity: 0; transform: translateY(30px); transition: 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-dark); }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent-purple); }
+
+        @media (max-width: 850px) {
+            .nav-menu { display: none; }
+            .hero h1 { font-size: 2.8rem; }
+            .modal-grid { grid-template-columns: 1fr; }
+            .modal-content { padding: 30px; }
+            .featured-card { min-width: 280px; height: 380px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">BestBoardGamesHub</a>
+            <nav class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#reviews" class="nav-link">Reviews</a>
+                <a href="#categories" class="nav-link">Categories</a>
+                <a href="#top" class="nav-link">Top 50</a>
+                <a href="#blog" class="nav-link">Blog</a>
+            </nav>
+            <div class="nav-actions">
+                <div class="search-container">
+                    <i class="fas fa-search" style="color: #6b7280"></i>
+                    <input type="text" id="searchInput" placeholder="Search games...">
+                </div>
+                <button class="icon-btn" title="Favorites">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1 class="fade-in">Find Your Perfect <br><span style="color: var(--accent-orange)">Board Game</span></h1>
+            <p class="fade-in">Expert reviews, exclusive 2026 rankings, and deep mechanic analysis. Your journey into the tabletop world starts here.</p>
+            <div class="fade-in" style="transition-delay: 0.2s">
+                <a href="#reviews" class="btn btn-primary">Browse Top 2026</a>
+                <a href="#categories" class="btn btn-outline">Find by Players</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" style="margin-top: -60px; z-index: 10; position: relative;">
+        <h2 class="section-title fade-in">Hot <span>Right Now</span></h2>
+        <div class="carousel-container fade-in">
+            <div class="carousel-track" id="featuredTrack">
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="categories">
+        <h2 class="section-title fade-in">Game <span>Categories</span></h2>
+        <div class="filters-bar fade-in" id="filterBar">
+            <button class="filter-chip active" data-filter="all">All Games</button>
+            <button class="filter-chip" data-filter="strategy">Strategy</button>
+            <button class="filter-chip" data-filter="coop">Co-op</button>
+            <button class="filter-chip" data-filter="party">Party Games</button>
+            <button class="filter-chip" data-filter="solo">Solo Mode</button>
+            <button class="filter-chip" data-filter="expert">Expert Heavy</button>
+        </div>
+    </section>
+
+    <section class="container" id="reviews">
+        <div class="games-grid" id="gamesGrid">
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="logo footer-logo">BestBoardGamesHub</div>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Your trusted guide in the world of cardboard and plastic. We test every game at least 10 times before publishing a review.</p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 25px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;">Quick Links</h4>
+                    <ul class="footer-link-list">
+                        <li><a href="#">Best of 2026</a></li>
+                        <li><a href="#">Strategy Guide</a></li>
+                        <li><a href="#">Game Rules Database</a></li>
+                        <li><a href="#">Submit a Review</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 25px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;">Community</h4>
+                    <div style="display: flex; gap: 20px; font-size: 1.5rem">
+                        <a href="#" class="icon-btn"><i class="fab fa-discord"></i></a>
+                        <a href="#" class="icon-btn"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="icon-btn"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="icon-btn"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; color: var(--accent-orange); font-size: 0.85rem; font-weight: 600; margin-bottom: 20px; background: rgba(249, 115, 22, 0.1); padding: 10px; border-radius: 8px;">
+                <i class="fas fa-exclamation-triangle"></i> Note: Amazon prices may fluctuate and may not be perfectly synced in real-time.
+            </div>
+
+            <div class="footer-disclaimer">
+                &copy; 2026 BestBoardGamesHub. All Rights Reserved. 
+                <br>Disclaimer: Some links on this site are affiliate links. We may earn a small commission at no extra cost to you. 
+                <a href="#" style="text-decoration: underline; color: var(--text-muted);" rel="nofollow sponsored">Amazon Affiliate Disclosure</a>.
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal" id="gameModal">
+        <div class="modal-content">
+            <button class="close-modal"><i class="fas fa-times"></i></button>
+            <div id="modalBody">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const gamesData = [
+            { id: 1, title: "Wingspan", rating: 4.8, type: "strategy", players: "1-5", time: "40-70", age: "10+", desc: "Build your avian sanctuary in this award-winning engine builder.", img: "https://images.unsplash.com/photo-1544650039-22886fbb4323?auto=format&fit=crop&q=80&w=600", full: "Wingspan is a competitive, medium-weight, card-driven, engine-building board game from Stonemaier Games.", price: 45.99 },
+            { id: 2, title: "Gloomhaven", rating: 4.9, type: "coop", players: "1-4", time: "60-120", age: "14+", desc: "A legendary tactical combat adventure in a persistent fantasy world.", img: "https://images.unsplash.com/photo-1611996575749-79a3a250f948?auto=format&fit=crop&q=80&w=600", full: "Gloomhaven is a game of Euro-inspired tactical combat in a persistent world of shifting motives.", price: 115.00 },
+            { id: 3, title: "Azul", rating: 4.7, type: "expert", players: "2-4", time: "30-45", age: "8+", desc: "Tile-placement excellence for the Portuguese royal palace.", img: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&q=80&w=600", full: "In the game Azul, players take turns drafting colored tiles from suppliers to their player board.", price: 31.99 },
+            { id: 4, title: "Cyber Nexus 2026", rating: 5.0, type: "strategy", players: "2-5", time: "90-150", age: "16+", desc: "Innovative AR strategy set in a neon cyberpunk future.", img: "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80&w=600", full: "The biggest hit of 2026. Cyber Nexus combines high-stakes resource management with a companion app.", price: 79.99 },
+            { id: 5, title: "Root", rating: 4.6, type: "strategy", players: "2-4", time: "60-90", age: "10+", desc: "Asymmetric warfare between cute woodland creatures.", img: "https://images.unsplash.com/photo-1606167668584-78701c57f13d?auto=format&fit=crop&q=80&w=600", full: "Root is a game of adventure and war in which 2 to 4 players fight for control of a vast wilderness.", price: 49.99 },
+            { id: 6, title: "Pandemic Legacy", rating: 4.8, type: "coop", players: "2-4", time: "60", age: "13+", desc: "Save the world from diseases while your choices change the game forever.", img: "https://images.unsplash.com/photo-1589487391730-58f20eb2c308?auto=format&fit=crop&q=80&w=600", full: "A cooperative campaign game where your actions in one game affect all future games.", price: 69.99 },
+            { id: 7, title: "Splendor Duel", rating: 4.5, type: "expert", players: "2", time: "30", age: "10+", desc: "A tight, competitive version of the jewelry-making classic.", img: "https://images.unsplash.com/photo-1629752187687-3d3c7ea3a21b?auto=format&fit=crop&q=80&w=600", full: "Splendor Duel is a standalone game for two players only. It keeps the core mechanics of Splendor.", price: 24.99 },
+            { id: 8, title: "Neon Drifters", rating: 4.3, type: "party", players: "3-8", time: "20-40", age: "18+", desc: "Fast-paced card game about illegal street racers.", img: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=600", full: "Perfect for parties. High-speed bluffing, risk management, and beautiful neon cards.", price: 19.99 },
+            { id: 9, title: "Terraforming Mars", rating: 4.9, type: "strategy", players: "1-5", time: "120+", age: "12+", desc: "Make the Red Planet habitable for future generations.", img: "https://images.unsplash.com/photo-1614728263952-84ea256f9679?auto=format&fit=crop&q=80&w=600", full: "Giant corporations compete to transform Mars into a habitable planet.", price: 54.95 },
+            { id: 10, title: "Void Star", rating: 4.4, type: "solo", players: "1", time: "45", age: "12+", desc: "Gritty survival on an abandoned space station.", img: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&q=80&w=600", full: "A dark atmosphere and challenging resource management.", price: 29.50 },
+            { id: 11, title: "Catan: 2026 Edition", rating: 4.2, type: "strategy", players: "3-4", time: "60-90", age: "8+", desc: "The legendary classic in a stunning new futuristic design.", img: "https://images.unsplash.com/photo-1601987077677-5346c0c57d3f?auto=format&fit=crop&q=80&w=600", full: "The same beloved Catan gameplay, now featuring 3D printed components.", price: 59.99 },
+            { id: 12, title: "Mind Games", rating: 4.1, type: "party", players: "4-12", time: "30", age: "12+", desc: "A collective social game about reading thoughts.", img: "https://images.unsplash.com/photo-1523875194681-bedd468c58bf?auto=format&fit=crop&q=80&w=600", full: "Easy to learn, hilarious to play. Perfect for large groups.", price: 22.00 }
+        ];
+
+        const gamesGrid = document.getElementById('gamesGrid');
+        const featuredTrack = document.getElementById('featuredTrack');
+        const filterBar = document.getElementById('filterBar');
+        const searchInput = document.getElementById('searchInput');
+        const modal = document.getElementById('gameModal');
+        const modalBody = document.getElementById('modalBody');
+        const cartCount = document.getElementById('cartCount');
+        
+        let favorites = JSON.parse(localStorage.getItem('favGames_en')) || [];
+
+        function renderGames(data) {
+            gamesGrid.innerHTML = '';
+            if(data.length === 0) {
+                gamesGrid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: var(--text-muted)">No games found matching your criteria.</p>';
+                return;
+            }
+            data.forEach(game => {
+                const isFav = favorites.includes(game.id) ? 'active' : '';
+                const card = `
+                    <div class="game-card fade-in">
+                        <img src="${game.img}" alt="${game.title}" class="game-img" loading="lazy">
+                        <div class="game-info">
+                            <div class="game-meta">
+                                <span><i class="fas fa-users"></i> ${game.players}</span>
+                                <span><i class="fas fa-clock"></i> ${game.time}m</span>
+                            </div>
+                            <h3 class="game-title">${game.title}</h3>
+                            <p class="game-desc">${game.desc}</p>
+                            <div class="price-label">$${game.price.toFixed(2)}</div>
+                        </div>
+                        <div class="game-footer">
+                            <span class="rating"><i class="fas fa-star"></i> ${game.rating}</span>
+                            <div style="display: flex; gap: 15px; align-items: center">
+                                <button class="fav-btn ${isFav}" onclick="toggleFav(${game.id}, this)">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <button class="btn-primary" style="padding: 6px 15px; font-size: 0.75rem" onclick="openModal(${game.id})">Review</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                gamesGrid.innerHTML += card;
+            });
+            updateCartUI();
+            observeAnimations();
+        }
+
+        function renderFeatured() {
+            const featured = gamesData.slice(0, 5);
+            featured.forEach(game => {
+                const item = `
+                    <div class="featured-card" onclick="openModal(${game.id})">
+                        <img src="${game.img}" alt="Featured Game">
+                        <div class="featured-overlay">
+                            <span class="modal-badge">EDITOR'S CHOICE</span>
+                            <h3 style="font-size: 1.5rem">${game.title}</h3>
+                            <p style="color: var(--accent-orange); font-weight: 700;">$${game.price.toFixed(2)}</p>
+                        </div>
+                    </div>
+                `;
+                featuredTrack.innerHTML += item;
+            });
+        }
+
+        function handleFilters() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const activeFilter = document.querySelector('.filter-chip.active').dataset.filter;
+
+            const filtered = gamesData.filter(game => {
+                const matchesSearch = game.title.toLowerCase().includes(searchTerm) || 
+                                     game.desc.toLowerCase().includes(searchTerm);
+                const matchesCategory = activeFilter === 'all' || game.type === activeFilter;
+                return matchesSearch && matchesCategory;
+            });
+            renderGames(filtered);
+        }
+
+        filterBar.addEventListener('click', (e) => {
+            if (e.target.classList.contains('filter-chip')) {
+                document.querySelectorAll('.filter-chip').forEach(btn => btn.classList.remove('active'));
+                e.target.classList.add('active');
+                handleFilters();
+            }
+        });
+
+        searchInput.addEventListener('input', handleFilters);
+
+        window.openModal = function(id) {
+            const game = gamesData.find(g => g.id === id);
+            modalBody.innerHTML = `
+                <div class="modal-grid">
+                    <img src="${game.img}" class="modal-img" alt="${game.title}">
+                    <div>
+                        <span class="modal-badge">${game.type.toUpperCase()}</span>
+                        <h2 style="font-size: 2.5rem; margin-bottom: 10px; font-weight: 800">${game.title}</h2>
+                        <div style="color: var(--accent-orange); margin-bottom: 25px; font-weight: 700; font-size: 1.1rem">
+                            Expert Rating: ${game.rating} / 5.0
+                        </div>
+                        <p style="margin-bottom: 25px; color: var(--text-muted); line-height: 1.7">${game.full}</p>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px; background: #1a1a1a; padding: 20px; border-radius: 12px;">
+                            <div style="font-size: 0.9rem"><strong>Players:</strong> ${game.players}</div>
+                            <div style="font-size: 0.9rem"><strong>Duration:</strong> ${game.time} min</div>
+                            <div style="font-size: 0.9rem"><strong>Age Range:</strong> ${game.age}</div>
+                            <div style="font-size: 0.9rem"><strong>Availability:</strong> In Stock</div>
+                        </div>
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 style="color: #fff; font-size: 1rem;">Price History (Last 30 Days)</h4>
+                            <div class="chart-sim">
+                                <div class="chart-line"></div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted); margin-top: 5px;">
+                                <span>Low: $${(game.price * 0.85).toFixed(2)}</span>
+                                <span>Current: $${game.price.toFixed(2)}</span>
+                                <span>High: $${(game.price * 1.15).toFixed(2)}</span>
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 style="color: #fff; font-size: 1rem;">Component Spotlight</h4>
+                            <div class="spotlight-grid">
+                                <div class="spotlight-item"><i class="fas fa-box-open" style="color: var(--accent-purple)"></i><br>Premium Minis</div>
+                                <div class="spotlight-item"><i class="fas fa-layer-group" style="color: var(--accent-purple)"></i><br>Thick Punchboard</div>
+                                <div class="spotlight-item"><i class="fas fa-palette" style="color: var(--accent-purple)"></i><br>Custom Art</div>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 15px; align-items: center">
+                            <a href="https://www.amazon.com/s?k=${encodeURIComponent(game.title)}" 
+                               target="_blank" rel="nofollow sponsored" class="btn btn-primary" style="flex: 1; text-align: center">
+                               Buy on Amazon ($${game.price.toFixed(2)})
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        };
+
+        document.querySelector('.close-modal').onclick = () => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        };
+
+        window.onclick = (event) => {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        };
+
+        window.toggleFav = function(id, btn) {
+            const index = favorites.indexOf(id);
+            if (index === -1) {
+                favorites.push(id);
+                btn.classList.add('active');
+            } else {
+                favorites.splice(index, 1);
+                btn.classList.remove('active');
+            }
+            localStorage.setItem('favGames_en', JSON.stringify(favorites));
+            updateCartUI();
+        };
+
+        function updateCartUI() {
+            cartCount.innerText = favorites.length;
+        }
+
+        function observeAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        }
+
+        let slideIndex = 0;
+        function autoSlide() {
+            const track = document.getElementById('featuredTrack');
+            const cardWidth = 320 + 25;
+            slideIndex = (slideIndex + 1) % 4;
+            track.style.transform = `translateX(-${slideIndex * cardWidth}px)`;
+        }
+        setInterval(autoSlide, 5000);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderFeatured();
+            renderGames(gamesData);
+        });
+    </script>
+</body>
+</html>
